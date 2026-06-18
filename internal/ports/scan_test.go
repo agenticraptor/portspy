@@ -1,6 +1,7 @@
 package ports
 
 import (
+	"path/filepath"
 	"testing"
 )
 
@@ -91,11 +92,15 @@ func TestBuildMergesAndEnriches(t *testing.T) {
 }
 
 func TestBuildExeDirFallback(t *testing.T) {
+	// Use OS-native paths so the finder key matches build()'s filepath.Dir(exe)
+	// on every platform (Windows included).
+	exe := filepath.FromSlash("/opt/cool/bin/server")
+	exeDir := filepath.Dir(exe)
 	raw := []rawListener{{Proto: ProtoTCP, Addr: "127.0.0.1", Port: 9000, PID: 50}}
 	procs := fakeProcs{
-		50: {PID: 50, Name: "server", Exe: "/opt/cool/bin/server"}, // no Cwd
+		50: {PID: 50, Name: "server", Exe: exe}, // no Cwd
 	}
-	finder := fakeFinder{"/opt/cool/bin": {Name: "cool", Type: "go", Root: "/opt/cool/bin"}}
+	finder := fakeFinder{exeDir: {Name: "cool", Type: "go", Root: exeDir}}
 
 	got := build(raw, procs, finder, 0)
 	if len(got) != 1 || got[0].Project.Name != "cool" {

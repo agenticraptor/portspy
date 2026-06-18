@@ -35,7 +35,7 @@ func TestDetectProjectGoModule(t *testing.T) {
 	fs.files[filepath.Join("/a/b", "go.mod")] = "module github.com/x/coolproj\n\ngo 1.22\n"
 
 	got := DetectProject(fs, "/a/b/cmd/server")
-	if got.Type != "go" || got.Name != "coolproj" || got.Root != "/a/b" {
+	if got.Type != "go" || got.Name != "coolproj" || got.Root != filepath.FromSlash("/a/b") {
 		t.Errorf("go.mod detection = %+v", got)
 	}
 }
@@ -75,7 +75,7 @@ func TestDetectProjectGitFallback(t *testing.T) {
 	fs.dirs[filepath.Join("/repo", ".git")] = true
 
 	got := DetectProject(fs, "/repo/internal/pkg")
-	if got.Name != "repo" || got.Root != "/repo" || got.Type != "" {
+	if got.Name != "repo" || got.Root != filepath.FromSlash("/repo") || got.Type != "" {
 		t.Errorf("git fallback = %+v", got)
 	}
 }
