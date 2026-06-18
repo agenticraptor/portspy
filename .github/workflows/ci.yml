@@ -57,4 +57,6 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v6
         with:
-          version: latest
+          # Pinned to the last v1 line: golangci-lint v2 uses a different config
+          # schema and would reject this repo's v1 .golangci.yml.
+          version: v1.64.8
