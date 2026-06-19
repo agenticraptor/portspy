@@ -118,8 +118,12 @@ Grab a binary for your OS/arch from the
 brew install agenticraptor/tap/portspy
 ```
 
-> Available once the Homebrew tap is published — see the note in
-> [`.goreleaser.yaml`](.goreleaser.yaml) to enable it.
+Or add the tap once and use the short name:
+
+```bash
+brew tap agenticraptor/tap
+brew install portspy
+```
 
 ### From source
 
