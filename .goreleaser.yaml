@@ -4,7 +4,9 @@ project_name: portspy
 
 before:
   hooks:
-    - go mod tidy
+    # Read-only: warms the module cache without rewriting go.mod/go.sum, so the
+    # working tree stays clean (GoReleaser aborts on a dirty tree).
+    - go mod download
 
 builds:
   - id: portspy
@@ -76,6 +78,9 @@ brews:
     repository:
       owner: agenticraptor
       name: homebrew-tap
+      # Use the PAT (not the default GITHUB_TOKEN, which can't write to another
+      # repo) so GoReleaser can push the formula to the tap.
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
     homepage: "https://github.com/agenticraptor/portspy"
     description: "See what's running on every local port and free it up in one keystroke"
     license: "MIT"
