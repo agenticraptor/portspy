@@ -25,15 +25,9 @@ long it's been up), and lets you kill it with a single keypress. The *"why is
 > go run github.com/agenticraptor/portspy/cmd/portspy@latest
 > ```
 
-<!--
-  📸 The hero GIF is the single biggest driver of stars. Render one in a single
-  command with the included VHS tape, then uncomment the <img> below:
-
-      go build -o /tmp/portspy ./cmd/portspy
-      PATH=/tmp:$PATH vhs docs/demo.tape    # writes docs/demo.gif
-
-  <p align="center"><img src="docs/demo.gif" alt="portspy demo" width="760"></p>
--->
+<p align="center">
+  <img src="docs/demo.gif" alt="portspy — see and kill whatever's hogging your local ports, in one key" width="820">
+</p>
 
 ```text
  🔌 portspy   7 listening  ·  sort: port                       updated 09:14:02

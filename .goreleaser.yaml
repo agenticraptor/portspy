@@ -66,24 +66,24 @@ changelog:
       - Merge pull request
       - Merge branch
 
-# Homebrew publishing is disabled by default so the first release succeeds
-# without extra setup. To enable `brew install agenticraptor/tap/portspy`:
-#   1. Create a public repo: github.com/agenticraptor/homebrew-tap
-#   2. Add a HOMEBREW_TAP_GITHUB_TOKEN secret (a PAT with `repo` scope)
-#   3. Uncomment the line in .github/workflows/release.yml and the block below
-# brews:
-#   - name: portspy
-#     repository:
-#       owner: agenticraptor
-#       name: homebrew-tap
-#     homepage: "https://github.com/agenticraptor/portspy"
-#     description: "See and kill whatever's hogging your local ports — project-aware, in one key."
-#     license: "MIT"
-#     test: |
-#       system "#{bin}/portspy version"
-#     commit_author:
-#       name: goreleaser-bot
-#       email: bot@portspy.dev
+# Homebrew formula, published to github.com/agenticraptor/homebrew-tap on each
+# tagged release. Requires (one-time): the public `homebrew-tap` repo to exist,
+# and a HOMEBREW_TAP_GITHUB_TOKEN secret (a PAT with `repo` scope) on this repo,
+# wired into .github/workflows/release.yml. Enables `brew install
+# agenticraptor/tap/portspy`.
+brews:
+  - name: portspy
+    repository:
+      owner: agenticraptor
+      name: homebrew-tap
+    homepage: "https://github.com/agenticraptor/portspy"
+    description: "See and kill whatever's hogging your local ports — project-aware, in one key."
+    license: "MIT"
+    test: |
+      system "#{bin}/portspy version"
+    commit_author:
+      name: goreleaser-bot
+      email: bot@portspy.dev
 
 release:
   github:
