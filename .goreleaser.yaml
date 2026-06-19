@@ -77,7 +77,7 @@ brews:
       owner: agenticraptor
       name: homebrew-tap
     homepage: "https://github.com/agenticraptor/portspy"
-    description: "See and kill whatever's hogging your local ports — project-aware, in one key."
+    description: "See what's running on every local port and free it up in one keystroke"
     license: "MIT"
     test: |
       system "#{bin}/portspy version"

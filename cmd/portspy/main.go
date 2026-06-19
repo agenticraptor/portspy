@@ -1,5 +1,5 @@
 // Command portspy shows what is listening on your local ports — with the
-// project and command behind each — and kills it with one key.
+// project and command behind each — and frees the port with one key.
 package main
 
 import (

@@ -2,12 +2,12 @@
 
 # 🔌 portspy
 
-### See — and kill — whatever's hogging your local ports. In one key.
+### See exactly what's running on every local port — and free it up in a keystroke.
 
 `portspy` is a fast terminal UI that lists everything listening on your machine,
 tells you **what it actually is** (the project, the dev server, the command, how
-long it's been up), and lets you kill it with a single keypress. The *"why is
-:3000 taken AGAIN?"* problem, solved.
+long it's been up), and lets you free up any port with a single keypress. The
+*"why is :3000 taken AGAIN?"* problem, solved.
 
 [![CI](https://github.com/agenticraptor/portspy/actions/workflows/ci.yml/badge.svg)](https://github.com/agenticraptor/portspy/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/agenticraptor/portspy?sort=semver)](https://github.com/agenticraptor/portspy/releases)
@@ -26,7 +26,7 @@ long it's been up), and lets you kill it with a single keypress. The *"why is
 > ```
 
 <p align="center">
-  <img src="docs/demo.gif" alt="portspy — see and kill whatever's hogging your local ports, in one key" width="820">
+  <img src="docs/demo.gif" alt="portspy — see what's running on every local port and free it up in a keystroke" width="820">
 </p>
 
 ```text

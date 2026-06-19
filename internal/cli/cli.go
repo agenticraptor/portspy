@@ -32,10 +32,10 @@ func newRootCmd() *cobra.Command {
 
 	cmd := &cobra.Command{
 		Use:   "portspy",
-		Short: "See and kill whatever's hogging your local ports",
+		Short: "See what's on every local port — and free it up in one keystroke",
 		Long: `portspy shows everything listening on your local ports — and the
 project, command, start time, and process lineage behind each one — then lets
-you kill it with one key.
+you free up any port with one key.
 
 Run with no arguments to open the interactive TUI. Use the subcommands for
 scripting:

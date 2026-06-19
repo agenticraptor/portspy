@@ -7,7 +7,7 @@ import (
 
 // HumanDuration renders a duration compactly for a status table: "3s", "5m",
 // "2h", "4d". It is intentionally coarse — single-unit precision is enough to
-// answer "how long has this been hogging the port?".
+// answer "how long has this been holding the port?".
 func HumanDuration(d time.Duration) string {
 	if d <= 0 {
 		return "—"
