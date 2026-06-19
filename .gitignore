@@ -25,3 +25,6 @@ coverage.html
 # Local env
 .env
 .env.local
+
+# Local one-time helper scripts must never be committed (this repo is pure Go).
+/*.sh

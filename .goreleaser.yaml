@@ -90,6 +90,23 @@ brews:
       name: goreleaser-bot
       email: bot@portspy.dev
 
+# Scoop manifest, published to github.com/agenticraptor/scoop-bucket so Windows
+# users can install with Scoop. Requires (one-time): the public `scoop-bucket`
+# repo to exist; it reuses the same HOMEBREW_TAP_GITHUB_TOKEN secret (a PAT with
+# `repo` scope). Enables `scoop install portspy` once the bucket is added.
+scoops:
+  - name: portspy
+    repository:
+      owner: agenticraptor
+      name: scoop-bucket
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    homepage: "https://github.com/agenticraptor/portspy"
+    description: "See what's running on every local port and free it up in one keystroke"
+    license: MIT
+    commit_author:
+      name: goreleaser-bot
+      email: bot@portspy.dev
+
 release:
   github:
     owner: agenticraptor

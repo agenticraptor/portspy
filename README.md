@@ -125,6 +125,13 @@ brew tap agenticraptor/tap
 brew install portspy
 ```
 
+### Scoop (Windows)
+
+```powershell
+scoop bucket add agenticraptor https://github.com/agenticraptor/scoop-bucket
+scoop install portspy
+```
+
 ### From source
 
 ```bash
